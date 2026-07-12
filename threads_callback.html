@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>A.L.I.E. — Threads Auth</title>
+    <style>
+        body { font-family: sans-serif; max-width: 500px; margin: 50px auto; text-align: center; padding: 0 16px; }
+        .success { color: #2e7d32; font-size: 2em; }
+        code { background: #f0f0f0; padding: 10px; display: block; border-radius: 5px; word-break: break-all; }
+        button { background: #e33; color: #fff; border: 0; border-radius: 6px; padding: 10px 22px;
+                 font-size: 1em; cursor: pointer; margin-top: 14px; }
+        #ok { color: #2e7d32; font-size: .9em; }
+    </style>
+</head>
+<body>
+    <h1 class="success">✅ Autenticación completada</h1>
+    <p>Copia la URL de la barra de direcciones / Copy this page's URL:</p>
+    <code id="url"></code>
+    <button onclick="copiar()">Copiar URL / Copy URL</button>
+    <p id="ok"></p>
+    <script>
+        document.getElementById('url').textContent = window.location.href;
+        function copiar() {
+            navigator.clipboard.writeText(window.location.href).then(function () {
+                document.getElementById('ok').textContent = '✓ Copiada / Copied';
+            });
+        }
+    </script>
+</body>
+</html>
